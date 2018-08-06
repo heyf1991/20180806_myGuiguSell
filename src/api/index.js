@@ -1,0 +1,19 @@
+/*
+* 多个api集合的页面，供外界使用
+* */
+/*[1、根据经纬度获取位置详情](#1根据经纬度获取位置详情)
+[2、   ](#2获取食品分类列表)
+[3、根据经纬度获取商铺列表](#3根据经纬度获取商铺列表)
+[4、根据经纬度和关键字搜索商铺列表](#4根据经纬度和关键字搜索商铺列表)
+[5、获取一次性验证码](#5获取一次性验证码)
+[6、用户名密码登陆](#6用户名密码登陆)
+[7、发送短信验证码](#7发送短信验证码)
+[8、手机号验证码登陆](#8手机号验证码登陆)
+[9、根据会话获取用户信息](#9根据会话获取用户信息)*/
+import ajax from './ajax'
+// 1. 根据经纬度获取位置详情   url参数            url拼接  请求类型如果是GET就免了
+export const reqAddress = (geohash) => ajax(`/position/${geohash}`)
+ // 2. 获取食品分类列表
+export const  reqFoodTypes = () => ajax(`/index_category`)
+// 3. 根据经纬度获取商铺列表
+export const reqShops = (latitude, longitude) => ajax(`/shops`, {latitude, longitude})
